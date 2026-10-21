@@ -307,6 +307,7 @@ Ran 13 tests in 22.976s
 
 OK
 # exit 0
+# note: each test line's long module path, ' (scripts.contrib.2026fa.kommurisi-data-role-salary-floor.test_salary_floor.<Class>.<test>)', was removed with sed for readability; nothing else was changed.
 ```
 
 **Deliberate break attempts: mutants.** Each mutant is a one-line sabotage that a hurried implementation might really contain:
