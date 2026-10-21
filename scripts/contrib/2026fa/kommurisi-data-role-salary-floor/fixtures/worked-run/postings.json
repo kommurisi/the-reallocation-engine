@@ -1,0 +1,71 @@
+{
+  "profile": {
+    "persona": "Fictional persona modelled on the author's situation: F-1 MS Information Systems (STEM) student in Boston, graduating Dec 2026, targeting early-career BI / analytics roles that will need H-1B sponsorship. No name, contacts or real dates.",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "floor_percentile": 25,
+    "floor_percentile_reason": "your-input: an early-career offer should not start below the metro's 25th percentile for the occupation",
+    "soc_spread_limit": 0.15
+  },
+  "postings": [
+    {
+      "id": "klaviyo-analytics-engineer",
+      "company": "Klaviyo",
+      "csv_name": "KLAVIYO INC",
+      "title": "Analytics Engineer",
+      "greenhouse": {"board": "klaviyo", "job_id": "7737707003"},
+      "soc_candidates_added": ["15-1243", "15-2051"],
+      "soc_choice": "15-2051",
+      "soc_choice_reason": "your-input: analytics/BI modelling work (O*NET 15-2051.01 BI Analysts); the lower of the two candidate floors, so the conservative pick"
+    },
+    {
+      "id": "cargurus-senior-product-data-analyst",
+      "company": "CarGurus",
+      "csv_name": "CARGURUS INC",
+      "title": "Senior Product Data Analyst",
+      "greenhouse": {"board": "cargurus", "job_id": "8096751"},
+      "soc_candidates_added": ["15-2051", "13-1161", "15-2041"],
+      "soc_choice": null
+    },
+    {
+      "id": "toast-senior-manager-cs-data-analytics",
+      "company": "Toast",
+      "csv_name": "TOAST INC",
+      "title": "Senior Manager, CS Data & Analytics",
+      "greenhouse": {"board": "toast", "job_id": "8243192"},
+      "soc_candidates_added": ["15-2051", "11-3021"],
+      "soc_choice": "15-2051",
+      "soc_choice_reason": "your-input: leads analytics work; 11-3021 (computer & information systems managers) is the other filing a lawyer might choose"
+    },
+    {
+      "id": "northwind-data-analyst-CONSTRUCTED",
+      "constructed": true,
+      "company": "Northwind Analytics",
+      "csv_name": "NORTHWIND ANALYTICS",
+      "title": "Data Analyst",
+      "posted_range": [65000, 78000],
+      "soc_choice": "15-2051",
+      "soc_choice_reason": "your-input: the persona targets BI-analyst work (15-2051.01)"
+    },
+    {
+      "id": "klaviyo-dead-job-CONSTRUCTED",
+      "constructed": true,
+      "company": "Klaviyo",
+      "csv_name": "KLAVIYO INC",
+      "title": "Data Analyst",
+      "greenhouse": {"board": "klaviyo", "job_id": "1000000001"},
+      "soc_choice": "15-2051",
+      "soc_choice_reason": "your-input: constructed liveness test (a job id that does not exist)"
+    },
+    {
+      "id": "inexact-metro-CONSTRUCTED",
+      "constructed": true,
+      "company": "Klaviyo",
+      "csv_name": "KLAVIYO INC",
+      "title": "Business Intelligence Analyst",
+      "metro": "Boston, MA",
+      "posted_range": [90000, 110000],
+      "soc_choice": "15-2051",
+      "soc_choice_reason": "your-input: constructed metro test ('Boston, MA' is not an exact BLS area title)"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"host": "https://boards-api.greenhouse.io", "checked_at": "2026-10-21T00:00:00+00:00 (FIXTURE)",
+ "jobs": {
+  "testboard/111": {"status": 200, "title": "Data Analyst", "pay_input_ranges": [{"title": "Base", "min_cents": 9000000, "max_cents": 11000000, "currency_type": "USD"}]},
+  "testboard/222": {"status": 200, "title": "BI Analyst", "pay_input_ranges": [{"title": "Base", "min_cents": 10000000, "max_cents": 12000000, "currency_type": "USD"}]},
+  "testboard/333": {"status": 404, "title": null, "pay_input_ranges": []}
+ }}

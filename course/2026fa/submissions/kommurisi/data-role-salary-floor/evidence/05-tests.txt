@@ -1,0 +1,21 @@
+# 2026-10-21T22:12:59Z · offline tests, fixtures only
+$ python -m unittest scripts/contrib/2026fa/kommurisi-data-role-salary-floor/test_salary_floor.py -v
+test_only_greenhouse_urls_are_built ... ok
+test_ambiguous_soc_without_choice_refuses ... ok
+test_bad_input_exits_2 ... ok
+test_close_candidates_take_the_lowest_floor ... ok
+test_company_h1b_median_is_context_never_the_floor ... ok
+test_dead_posting_is_skipped_without_comparison ... ok
+test_equal_to_floor_clears_and_below_floor_is_flagged ... ok
+test_floor_is_the_bls_p25_of_the_chosen_soc ... ok
+test_lca_wage_gate_is_never_claimed ... ok
+test_missing_data_file_exits_2 ... ok
+test_no_metro_match_never_falls_back_to_national ... ok
+test_suppressed_median_refuses ... ok
+test_top_coded_percentile_refuses ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 22.976s
+
+OK
+# exit 0

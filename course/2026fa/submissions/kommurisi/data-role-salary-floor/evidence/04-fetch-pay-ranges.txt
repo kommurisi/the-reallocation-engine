@@ -1,0 +1,8 @@
+# 2026-10-21T21:26:04Z Â· the mode's only network step
+$ python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fetch_pay_ranges.py
+200  klaviyo/7737707003  Analytics Engineer  $140,000–$210,000
+200  cargurus/8096751  Senior Product Data Analyst, Dealer  $120,000–$151,000
+200  toast/8243192  Senior Manager, CS Data & Analytics  $145,000–$232,000
+404  klaviyo/1000000001    no range
+# exit 0
+# note (added 2026-10-21): each '?' / 'ï¿½' above is an en dash mangled by the Windows console code page, not data. The saved file fixtures/worked-run/pay-ranges.json holds the exact values; fetch_pay_ranges.py now prints an ASCII '-'.

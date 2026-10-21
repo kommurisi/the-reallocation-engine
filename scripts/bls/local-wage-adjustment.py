@@ -15,7 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-VENV_PY = REPO_ROOT / ".venv" / "bin" / "python"
+# Windows venvs put the interpreter in Scripts\python.exe, not bin/python (2026fa kommurisi patch).
+VENV_PY = REPO_ROOT / ".venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 
 
 def _ensure_venv() -> None:
@@ -27,6 +28,9 @@ def _ensure_venv() -> None:
         )
         sys.exit(2)
     if Path(sys.executable).resolve() != VENV_PY.resolve():
+        if os.name == "nt":  # Windows execv does not quote argv, so a path with a space splits
+            import subprocess
+            sys.exit(subprocess.call([str(VENV_PY), *sys.argv]))
         os.execv(str(VENV_PY), [str(VENV_PY), *sys.argv])
 
 

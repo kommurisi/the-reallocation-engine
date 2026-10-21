@@ -1,0 +1,22 @@
+{
+  "built_at": "2026-10-21T22:06:06+00:00",
+  "sources": {
+    "bls": {
+      "file": "MSA_M2024_dl.xlsx",
+      "sha256": "2a172aed29693f50afa398be03fd107ce6bfff8b04e5fd163b4c5ddcf941d6ec",
+      "url": "https://www.bls.gov/oes/special-requests/oesm24ma.zip"
+    },
+    "bea": {
+      "file": "MARPP_MSA_2008_2024.csv",
+      "sha256": "4ce7a7e2ea08ff721de83f50d8a70bb9c93956a49970462f462372aa58cee9f4",
+      "url": "https://apps.bea.gov/regional/zip/MARPP.zip"
+    }
+  },
+  "rows": {
+    "metro_oews": 150176,
+    "metro_oews_areas": 393,
+    "metro_oews_detailed": 141164,
+    "bea_rpp_all_items": 389,
+    "crosswalk_exact_matches": 387
+  }
+}

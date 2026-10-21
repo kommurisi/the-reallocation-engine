@@ -1,0 +1,8 @@
+# 2026-10-21T22:13:22Z · break attempts: 4 one-line mutants of salary_floor.py vs the test suite
+$ python scripts/contrib/2026fa/kommurisi-data-role-salary-floor/mutation_test.py
+BROKEN-floor-from-company-h1b-median: KILLED by 4 test(s): test_close_candidates_take_the_lowest_floor, test_company_h1b_median_is_context_never_the_floor, test_equal_to_floor_clears_and_below_floor_is_flagged, test_floor_is_the_bls_p25_of_the_chosen_soc
+BROKEN-national-fallback-on-no-metro: KILLED by 1 test(s): test_no_metro_match_never_falls_back_to_national
+BROKEN-no-ambiguity-gate-silently-take-lowest: KILLED by 1 test(s): test_ambiguous_soc_without_choice_refuses
+BROKEN-liveness-ignored: KILLED by 1 test(s): test_dead_posting_is_skipped_without_comparison
+4/4 mutants killed
+# exit 0

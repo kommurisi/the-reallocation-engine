@@ -1,0 +1,531 @@
+{
+  "meta": {
+    "run_date": "2026-10-21",
+    "input": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/postings.json",
+    "pay": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json",
+    "maintained_script": "scripts/bls/local-wage-adjustment.py",
+    "oews": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv",
+    "mode": "data-role-salary-floor v0.1.0"
+  },
+  "profile": {
+    "persona": "Fictional persona modelled on the author's situation: F-1 MS Information Systems (STEM) student in Boston, graduating Dec 2026, targeting early-career BI / analytics roles that will need H-1B sponsorship. No name, contacts or real dates.",
+    "metro": "Boston-Cambridge-Newton, MA-NH",
+    "floor_percentile": 25,
+    "floor_percentile_reason": "your-input: an early-career offer should not start below the metro's 25th percentile for the occupation",
+    "soc_spread_limit": 0.15
+  },
+  "results": [
+    {
+      "id": "klaviyo-analytics-engineer",
+      "company": "Klaviyo",
+      "title": "Analytics Engineer",
+      "metro": "Boston-Cambridge-Newton, MA-NH",
+      "constructed": false,
+      "gates": {
+        "G3_liveness": "live",
+        "G1_soc": "ok: 15-2051",
+        "G2_metro_wage": "ok",
+        "G4_lca_prevailing_wage": "not-checked [TODO-1: OFLC wage level not in repo]"
+      },
+      "flags": [],
+      "values": {
+        "api_status": {
+          "value": 200,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json (2026-10-21T21:26:05+00:00)",
+          "label": "record"
+        },
+        "posted_range": {
+          "value": [
+            140000.0,
+            210000.0
+          ],
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json pay_input_ranges[0] (Base Pay Range For US Locations:)",
+          "label": "record"
+        },
+        "soc_candidates_onet": {
+          "value": "no exact O*NET title match (sample only)",
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "soc_candidates_added": {
+          "value": [
+            "15-1243",
+            "15-2051"
+          ],
+          "source": "postings.json",
+          "label": "your-input"
+        },
+        "metro_floor_by_soc": {
+          "value": {
+            "15-1243": "132660",
+            "15-2051": "102400"
+          },
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv via maintained evaluate_pair",
+          "label": "record"
+        },
+        "soc_choice": {
+          "value": "15-2051",
+          "source": "your-input: analytics/BI modelling work (O*NET 15-2051.01 BI Analysts); the lower of the two candidate floors, so the conservative pick",
+          "label": "your-input"
+        },
+        "soc_floor_spread": {
+          "value": 0.296,
+          "source": "script-output: max/min of the candidates' metro floors",
+          "label": "script-output"
+        },
+        "floor": {
+          "value": 102400.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT25 (Data Scientists, Boston-Cambridge-Newton, MA-NH, May 2024)",
+          "label": "record"
+        },
+        "metro_median": {
+          "value": 131830.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_MEDIAN",
+          "label": "record"
+        },
+        "metro_p75": {
+          "value": 166710.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT75",
+          "label": "record"
+        },
+        "metro_employment": {
+          "value": "8220",
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 TOT_EMP",
+          "label": "record"
+        },
+        "rpp_adjusted_median": {
+          "value": 121764.91,
+          "source": "maintained script (RPP 108.2660)",
+          "label": "script-output"
+        },
+        "national_median": {
+          "value": 112590.0,
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "crosscheck_p25": {
+          "value": true,
+          "source": "maintained adjusted_low × RPP/100 = 102400.00",
+          "label": "script-output"
+        },
+        "company_h1b_median_all_roles": {
+          "value": 126000.0,
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:14495 median_salary_offered (all H-1B roles at KLAVIYO INC, not this role)",
+          "label": "record"
+        },
+        "company_h1b_approvals": {
+          "value": "154.0",
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:14495 Total Approvals",
+          "label": "record"
+        }
+      },
+      "decision": "Range clears floor",
+      "reason": "posted minimum $140,000 ≥ floor $102,400"
+    },
+    {
+      "id": "cargurus-senior-product-data-analyst",
+      "company": "CarGurus",
+      "title": "Senior Product Data Analyst",
+      "metro": "Boston-Cambridge-Newton, MA-NH",
+      "constructed": false,
+      "gates": {
+        "G3_liveness": "live",
+        "G1_soc": "unresolved: ambiguous-soc (floors differ by 42%)"
+      },
+      "flags": [],
+      "values": {
+        "api_status": {
+          "value": 200,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json (2026-10-21T21:26:05+00:00)",
+          "label": "record"
+        },
+        "posted_range": {
+          "value": [
+            120000.0,
+            151000.0
+          ],
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json pay_input_ranges[0] (Position Pay Range)",
+          "label": "record"
+        },
+        "soc_candidates_onet": {
+          "value": "no exact O*NET title match (sample only)",
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "soc_candidates_added": {
+          "value": [
+            "15-2051",
+            "13-1161",
+            "15-2041"
+          ],
+          "source": "postings.json",
+          "label": "your-input"
+        },
+        "metro_floor_by_soc": {
+          "value": {
+            "13-1161": "72130",
+            "15-2041": "81950",
+            "15-2051": "102400"
+          },
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv via maintained evaluate_pair",
+          "label": "record"
+        },
+        "soc_floor_spread": {
+          "value": 0.42,
+          "source": "script-output: max/min of the candidates' metro floors",
+          "label": "script-output"
+        }
+      },
+      "decision": "Unresolved",
+      "reason": "ambiguous-soc: 3 candidate SOCs, floors differ by 42%; choose one"
+    },
+    {
+      "id": "toast-senior-manager-cs-data-analytics",
+      "company": "Toast",
+      "title": "Senior Manager, CS Data & Analytics",
+      "metro": "Boston-Cambridge-Newton, MA-NH",
+      "constructed": false,
+      "gates": {
+        "G3_liveness": "live",
+        "G1_soc": "ok: 15-2051",
+        "G2_metro_wage": "ok",
+        "G4_lca_prevailing_wage": "not-checked [TODO-1: OFLC wage level not in repo]"
+      },
+      "flags": [
+        "company-h1b-median-above-metro-p75: senior/engineering-weighted; do not anchor on it"
+      ],
+      "values": {
+        "api_status": {
+          "value": 200,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json (2026-10-21T21:26:05+00:00)",
+          "label": "record"
+        },
+        "posted_range": {
+          "value": [
+            145000.0,
+            232000.0
+          ],
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json pay_input_ranges[0] (Pay Range)",
+          "label": "record"
+        },
+        "soc_candidates_onet": {
+          "value": "no exact O*NET title match (sample only)",
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "soc_candidates_added": {
+          "value": [
+            "15-2051",
+            "11-3021"
+          ],
+          "source": "postings.json",
+          "label": "your-input"
+        },
+        "metro_floor_by_soc": {
+          "value": {
+            "11-3021": "169010",
+            "15-2051": "102400"
+          },
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv via maintained evaluate_pair",
+          "label": "record"
+        },
+        "soc_choice": {
+          "value": "15-2051",
+          "source": "your-input: leads analytics work; 11-3021 (computer & information systems managers) is the other filing a lawyer might choose",
+          "label": "your-input"
+        },
+        "soc_floor_spread": {
+          "value": 0.65,
+          "source": "script-output: max/min of the candidates' metro floors",
+          "label": "script-output"
+        },
+        "floor": {
+          "value": 102400.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT25 (Data Scientists, Boston-Cambridge-Newton, MA-NH, May 2024)",
+          "label": "record"
+        },
+        "metro_median": {
+          "value": 131830.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_MEDIAN",
+          "label": "record"
+        },
+        "metro_p75": {
+          "value": 166710.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT75",
+          "label": "record"
+        },
+        "metro_employment": {
+          "value": "8220",
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 TOT_EMP",
+          "label": "record"
+        },
+        "rpp_adjusted_median": {
+          "value": 121764.91,
+          "source": "maintained script (RPP 108.2660)",
+          "label": "script-output"
+        },
+        "national_median": {
+          "value": 112590.0,
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "crosscheck_p25": {
+          "value": true,
+          "source": "maintained adjusted_low × RPP/100 = 102400.00",
+          "label": "script-output"
+        },
+        "company_h1b_median_all_roles": {
+          "value": 177341.0,
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:27011 median_salary_offered (all H-1B roles at TOAST INC, not this role)",
+          "label": "record"
+        },
+        "company_h1b_approvals": {
+          "value": "150.0",
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:27011 Total Approvals",
+          "label": "record"
+        }
+      },
+      "decision": "Range clears floor",
+      "reason": "posted minimum $145,000 ≥ floor $102,400"
+    },
+    {
+      "id": "northwind-data-analyst-CONSTRUCTED",
+      "company": "Northwind Analytics",
+      "title": "Data Analyst",
+      "metro": "Boston-Cambridge-Newton, MA-NH",
+      "constructed": true,
+      "gates": {
+        "G3_liveness": "unchecked",
+        "G1_soc": "ok: 15-2051",
+        "G2_metro_wage": "ok",
+        "G4_lca_prevailing_wage": "not-checked [TODO-1: OFLC wage level not in repo]"
+      },
+      "flags": [
+        "liveness-unchecked: the comparison is provisional until the posting is confirmed live"
+      ],
+      "values": {
+        "posted_range": {
+          "value": [
+            65000,
+            78000
+          ],
+          "source": "postings.json (constructed)",
+          "label": "your-input"
+        },
+        "soc_candidates_onet": {
+          "value": [
+            "13-2099.01 Financial Quantitative Analysts",
+            "15-1243.00 Database Architects",
+            "15-2041.00 Statisticians",
+            "15-2051.00 Data Scientists",
+            "15-2099.01 Bioinformatics Technicians",
+            "19-3022.00 Survey Researchers",
+            "19-4061.00 Social Science Research Assistants"
+          ],
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "metro_floor_by_soc": {
+          "value": {
+            "13-2099": "67720",
+            "15-1243": "132660",
+            "15-2041": "81950",
+            "15-2051": "102400",
+            "15-2099": "72920",
+            "19-3022": "missing: no-occupation-row",
+            "19-4061": "46190"
+          },
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv via maintained evaluate_pair",
+          "label": "record"
+        },
+        "soc_choice": {
+          "value": "15-2051",
+          "source": "your-input: the persona targets BI-analyst work (15-2051.01)",
+          "label": "your-input"
+        },
+        "soc_floor_spread": {
+          "value": 1.872,
+          "source": "script-output: max/min of the candidates' metro floors",
+          "label": "script-output"
+        },
+        "floor": {
+          "value": 102400.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT25 (Data Scientists, Boston-Cambridge-Newton, MA-NH, May 2024)",
+          "label": "record"
+        },
+        "metro_median": {
+          "value": 131830.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_MEDIAN",
+          "label": "record"
+        },
+        "metro_p75": {
+          "value": 166710.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT75",
+          "label": "record"
+        },
+        "metro_employment": {
+          "value": "8220",
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 TOT_EMP",
+          "label": "record"
+        },
+        "rpp_adjusted_median": {
+          "value": 121764.91,
+          "source": "maintained script (RPP 108.2660)",
+          "label": "script-output"
+        },
+        "national_median": {
+          "value": 112590.0,
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "crosscheck_p25": {
+          "value": true,
+          "source": "maintained adjusted_low × RPP/100 = 102400.00",
+          "label": "script-output"
+        },
+        "company_h1b_median_all_roles": {
+          "value": null,
+          "source": "no exact row for 'NORTHWIND ANALYTICS' in data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv",
+          "label": "record"
+        }
+      },
+      "decision": "Range starts below floor",
+      "reason": "posted minimum $65,000 is $37,400 under the floor $102,400; ask at or above the floor"
+    },
+    {
+      "id": "klaviyo-dead-job-CONSTRUCTED",
+      "company": "Klaviyo",
+      "title": "Data Analyst",
+      "metro": "Boston-Cambridge-Newton, MA-NH",
+      "constructed": true,
+      "gates": {
+        "G3_liveness": "not-live",
+        "G1_soc": "ok: 15-2051",
+        "G2_metro_wage": "ok",
+        "G4_lca_prevailing_wage": "not-checked [TODO-1: OFLC wage level not in repo]"
+      },
+      "flags": [],
+      "values": {
+        "api_status": {
+          "value": 404,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/pay-ranges.json (2026-10-21T21:26:05+00:00)",
+          "label": "record"
+        },
+        "soc_candidates_onet": {
+          "value": [
+            "13-2099.01 Financial Quantitative Analysts",
+            "15-1243.00 Database Architects",
+            "15-2041.00 Statisticians",
+            "15-2051.00 Data Scientists",
+            "15-2099.01 Bioinformatics Technicians",
+            "19-3022.00 Survey Researchers",
+            "19-4061.00 Social Science Research Assistants"
+          ],
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "metro_floor_by_soc": {
+          "value": {
+            "13-2099": "67720",
+            "15-1243": "132660",
+            "15-2041": "81950",
+            "15-2051": "102400",
+            "15-2099": "72920",
+            "19-3022": "missing: no-occupation-row",
+            "19-4061": "46190"
+          },
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv via maintained evaluate_pair",
+          "label": "record"
+        },
+        "soc_choice": {
+          "value": "15-2051",
+          "source": "your-input: constructed liveness test (a job id that does not exist)",
+          "label": "your-input"
+        },
+        "soc_floor_spread": {
+          "value": 1.872,
+          "source": "script-output: max/min of the candidates' metro floors",
+          "label": "script-output"
+        },
+        "floor": {
+          "value": 102400.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT25 (Data Scientists, Boston-Cambridge-Newton, MA-NH, May 2024)",
+          "label": "record"
+        },
+        "metro_median": {
+          "value": 131830.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_MEDIAN",
+          "label": "record"
+        },
+        "metro_p75": {
+          "value": 166710.0,
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 A_PCT75",
+          "label": "record"
+        },
+        "metro_employment": {
+          "value": "8220",
+          "source": "scripts/contrib/2026fa/kommurisi-data-role-salary-floor/.data/metro_oews.csv:16965 TOT_EMP",
+          "label": "record"
+        },
+        "rpp_adjusted_median": {
+          "value": 121764.91,
+          "source": "maintained script (RPP 108.2660)",
+          "label": "script-output"
+        },
+        "national_median": {
+          "value": 112590.0,
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        },
+        "crosscheck_p25": {
+          "value": true,
+          "source": "maintained adjusted_low × RPP/100 = 102400.00",
+          "label": "script-output"
+        },
+        "company_h1b_median_all_roles": {
+          "value": 126000.0,
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:14495 median_salary_offered (all H-1B roles at KLAVIYO INC, not this role)",
+          "label": "record"
+        },
+        "company_h1b_approvals": {
+          "value": "154.0",
+          "source": "data/80-days-to-stay/80-days-csv/mapped_student_employment_targets_v3.csv:14495 Total Approvals",
+          "label": "record"
+        }
+      },
+      "decision": "Skip",
+      "reason": "posting not live (Greenhouse API 404): no comparison"
+    },
+    {
+      "id": "inexact-metro-CONSTRUCTED",
+      "company": "Klaviyo",
+      "title": "Business Intelligence Analyst",
+      "metro": "Boston, MA",
+      "constructed": true,
+      "gates": {
+        "G3_liveness": "unchecked",
+        "G2_metro_wage": "missing: no-metro-match"
+      },
+      "flags": [],
+      "values": {
+        "posted_range": {
+          "value": [
+            90000,
+            110000
+          ],
+          "source": "postings.json (constructed)",
+          "label": "your-input"
+        },
+        "soc_candidates_onet": {
+          "value": [
+            "15-2051.01 Business Intelligence Analysts"
+          ],
+          "source": "data/bls/compact/soc_occupation_compact.csv",
+          "label": "record"
+        }
+      },
+      "decision": "Unresolved",
+      "reason": "no-metro-match (no national fallback)"
+    }
+  ]
+}

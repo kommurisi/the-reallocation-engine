@@ -1,0 +1,66 @@
+{
+  "host": "https://boards-api.greenhouse.io",
+  "checked_at": "2026-10-21T21:26:05+00:00",
+  "jobs": {
+    "klaviyo/7737707003": {
+      "url": "https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs/7737707003?pay_transparency=true",
+      "status": 200,
+      "title": "Analytics Engineer",
+      "location": "Boston, MA",
+      "updated_at": "2026-10-20T15:15:49-04:00",
+      "pay_input_ranges": [
+        {
+          "min_cents": 14000000,
+          "max_cents": 21000000,
+          "currency_type": "USD",
+          "title": "Base Pay Range For US Locations:",
+          "blurb": "<p><strong>Massachusetts Applicants:<br></strong>It is unlawful in Massachusetts to require or administer a lie detector test as a condition of employment or continued employment. An employer who violates this law shall be subject to criminal penalties and civil liability.</p>\n<hr>\n<p>Our salary range reflects the cost of labor across various U.S. geographic markets. The range displayed below reflects the minimum and maximum target salaries for the position across all our US locations. The base salary offered for this position is determined by several factors, including the applicant\u2019s job-related skills, relevant experience, education or training, and work location.</p>\n<p>In addition to base salary, our total compensation package may include participation in the company\u2019s annual cash bonus plan, variable compensation (OTE) for sales and customer success roles, equity, sign-on payments, and a comprehensive range of health, welfare, and wellbeing benefits based on eligibility.&nbsp;</p>\n<p>Your recruiter can provide more details about the specific salary/OTE range for your preferred location during the hiring process.</p>"
+        }
+      ],
+      "error": null
+    },
+    "cargurus/8096751": {
+      "url": "https://boards-api.greenhouse.io/v1/boards/cargurus/jobs/8096751?pay_transparency=true",
+      "status": 200,
+      "title": "Senior Product Data Analyst, Dealer",
+      "location": "Boston, Massachusetts, United States",
+      "updated_at": "2026-08-31T16:05:32-04:00",
+      "pay_input_ranges": [
+        {
+          "min_cents": 12000000,
+          "max_cents": 15100000,
+          "currency_type": "USD",
+          "title": "Position Pay Range",
+          "blurb": "<p><span data-sheets-root=\"1\">The displayed range represents the expected annual base salary / On-Target Earnings (OTE) for this position. On-Target Earnings (OTE) is inclusive of base salary and on-target commission earnings, which applies exclusively to sales roles.<br><br>Individual pay within this range is determined by work location and other factors such as job-related skills, experience, and relevant education or training.<br><br>This annual base salary forms part of a comprehensive Total Rewards Package. In addition to benefits, this role may qualify for discretionary bonuses/incentives and Restricted Stock Units (RSUs).</span></p>"
+        }
+      ],
+      "error": null
+    },
+    "toast/8243192": {
+      "url": "https://boards-api.greenhouse.io/v1/boards/toast/jobs/8243192?pay_transparency=true",
+      "status": 200,
+      "title": "Senior Manager, CS Data & Analytics",
+      "location": "Boston, MA",
+      "updated_at": "2026-10-06T14:01:02-04:00",
+      "pay_input_ranges": [
+        {
+          "min_cents": 14500000,
+          "max_cents": 23200000,
+          "currency_type": "USD",
+          "title": "Pay Range",
+          "blurb": "<p><span data-sheets-root=\"1\">The base salary range for this role is listed below. The starting salary will be determined based on skills, experience, and geographic location. In addition to base salary, our total rewards components include cash compensation (overtime, bonus/commissions if eligible), equity, and benefits. You can learn more about how we align pay with local labor markets in our <a class=\"in-cell-link\" href=\"https://careers.toasttab.com/us-pay-zones\" target=\"_blank\">Geographic Pay Zone Philosophy</a>.</span></p>"
+        }
+      ],
+      "error": null
+    },
+    "klaviyo/1000000001": {
+      "url": "https://boards-api.greenhouse.io/v1/boards/klaviyo/jobs/1000000001?pay_transparency=true",
+      "status": 404,
+      "title": null,
+      "location": null,
+      "updated_at": null,
+      "pay_input_ranges": [],
+      "error": null
+    }
+  }
+}

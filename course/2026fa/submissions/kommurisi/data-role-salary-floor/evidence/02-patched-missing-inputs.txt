@@ -1,0 +1,7 @@
+# 2026-10-21T21:20:21Z · after BOTH Windows fixes (venv path; execv quoting); default inputs still absent from the repo
+$ npm run bls:local-wage -- --metro "Boston-Cambridge-Newton, MA-NH" --soc 15-2051
+missing data file: ~\Documents\GitHub\the-reallocation-engine\data\bls\local-wage\metro_oews.csv
+# exit 2
+$ git ls-files data/bls/local-wage data/BLS/local-wage | wc -l
+0
+# note (2026-10-21): the home-folder part of the path is shown as ~ for privacy; nothing else was changed.

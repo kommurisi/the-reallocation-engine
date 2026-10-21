@@ -1,0 +1,6 @@
+# 2026-10-21T21:19:36Z · Windows 11, Git Bash, Python 3.13.2 · branch contrib/2026fa-kommurisi-data-role-salary-floor @ 015843d (unpatched maintained script)
+$ npm run bls:local-wage -- --metro "Boston-Cambridge-Newton, MA-NH" --soc 15-2051
+missing .venv — create it with:
+  python3.13 -m venv .venv
+  .venv/bin/pip install -r data/bls/local-wage/requirements.txt
+# exit 2

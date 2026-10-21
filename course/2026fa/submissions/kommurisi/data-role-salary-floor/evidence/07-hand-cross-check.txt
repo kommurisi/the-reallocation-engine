@@ -1,0 +1,10 @@
+# 2026-10-21T21:44:24Z · hand cross-check: values in the worked-run report re-read from the ORIGINAL sources (BLS xlsx via openpyxl, 80 Days CSV via grep), bypassing build_local_wage_inputs.py and salary_floor.py
+MSA_M2024_dl.xlsx  AREA=14460 Boston-Cambridge-Newton, MA-NH  13-1161 Market Research Analysts and Marketing Specialists  A_PCT25=72130  A_MEDIAN=95930  A_PCT75=130200
+MSA_M2024_dl.xlsx  AREA=14460 Boston-Cambridge-Newton, MA-NH  15-1243 Database Architects  A_PCT25=132660  A_MEDIAN=162310  A_PCT75=181720
+MSA_M2024_dl.xlsx  AREA=14460 Boston-Cambridge-Newton, MA-NH  15-2041 Statisticians  A_PCT25=81950  A_MEDIAN=99230  A_PCT75=130980
+MSA_M2024_dl.xlsx  AREA=14460 Boston-Cambridge-Newton, MA-NH  15-2051 Data Scientists  A_PCT25=102400  A_MEDIAN=131830  A_PCT75=166710
+not found: none
+$ grep -n '^KLAVIYO INC,\|^TOAST INC,' mapped_student_employment_targets_v3.csv | cut -f1,16,19 (company, Total Approvals, median_salary_offered)
+14495 KLAVIYO INC 154.0 126000.0
+27011 TOAST INC 150.0 177341.0
+CARGURUS INC present: False

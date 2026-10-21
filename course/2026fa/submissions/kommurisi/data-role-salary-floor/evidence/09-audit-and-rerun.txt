@@ -1,0 +1,22 @@
+# 2026-10-21T22:09:29Z · audit: the agent log re-read against its sources, plus a determinism re-run
+$ python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/audit_log.py
+A1 one entry per posting, each with decision + reason: held (6/6)
+A2 klaviyo-analytics-engineer: floor 102,400 vs metro_oews.csv:16965 A_PCT25=102400 (Boston-Cambridge-Newton, MA-NH / 15-2051): held
+A2 toast-senior-manager-cs-data-analytics: floor 102,400 vs metro_oews.csv:16965 A_PCT25=102400 (Boston-Cambridge-Newton, MA-NH / 15-2051): held
+A2 northwind-data-analyst-CONSTRUCTED: floor 102,400 vs metro_oews.csv:16965 A_PCT25=102400 (Boston-Cambridge-Newton, MA-NH / 15-2051): held
+A2 klaviyo-dead-job-CONSTRUCTED: floor 102,400 vs metro_oews.csv:16965 A_PCT25=102400 (Boston-Cambridge-Newton, MA-NH / 15-2051): held
+A2 floors re-read from source: 4 checked
+A3 cargurus-senior-product-data-analyst: Unresolved, comparison made: no
+A3 klaviyo-dead-job-CONSTRUCTED: Skip, comparison made: no
+A3 inexact-metro-CONSTRUCTED: Unresolved, comparison made: no
+A4 klaviyo-analytics-engineer: KLAVIYO INC median_salary_offered=126000.0: held
+A4 toast-senior-manager-cs-data-analytics: TOAST INC median_salary_offered=177341.0: held
+A4 klaviyo-dead-job-CONSTRUCTED: KLAVIYO INC median_salary_offered=126000.0: held
+A5 labels used: ['record', 'script-output', 'your-input']: held (model-judgment present: False)
+all checks held
+# exit 0
+
+$ python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/salary_floor.py   # second run, then compare results[] with the first
+6 postings → Range clears floor 2 · Unresolved 2 · Range starts below floor 1 · Skip 1
+wrote course/2026fa/submissions/kommurisi/data-role-salary-floor/runs/latest/salary-floor.report.md and salary-floor.log.json
+results[] identical across runs: True

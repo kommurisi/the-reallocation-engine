@@ -1,0 +1,9 @@
+# 2026-10-21T22:04:34Z · rebuild of the maintained script's inputs (re-run for this record; outputs compared with the first build by sha256)
+$ .venv/Scripts/python.exe scripts/contrib/2026fa/kommurisi-data-role-salary-floor/build_local_wage_inputs.py --bls ~/Downloads/reallocation-data/oesm24ma/oesm24ma/MSA_M2024_dl.xlsx --bea ~/Downloads/reallocation-data/marpp/MARPP_MSA_2008_2024.csv
+{"metro_oews": 150176, "metro_oews_areas": 393, "metro_oews_detailed": 141164, "bea_rpp_all_items": 389, "crosswalk_exact_matches": 387}
+# exit 0
+$ sha256sum .data/{metro_oews,bea_rpp,bls_bea_msa_crosswalk}.csv   # identical to the first build?
+a549a37d43f815e0838737fcbb2286738774f04fea389f1647031a0a5ebb7021 *.data/metro_oews.csv
+9690fbe43c4de6a2b701e970504a4b0879f7a0f15799c620d15a3a45b394a344 *.data/bea_rpp.csv
+75731732f65fd6ebd1d8eeeccdeccc47a79f4f0527b0f43e36bacb4c017b723b *.data/bls_bea_msa_crosswalk.csv
+identical to the first build: yes

@@ -1,0 +1,47 @@
+# 2026-10-21T21:21:48Z · maintained script (Windows-patched) on inputs rebuilt by build_local_wage_inputs.py; the three documented checks (scripts/bls/README.md + summer-2026 portfolio)
+
+$ python3 scripts/bls/local-wage-adjustment.py --metro "Glens Falls, NY" --soc 15-1252 <rebuilt inputs> --json
+coverage = 0/1 (ok=0 attempted=1 missing_reason={'suppressed-small-sample': 1})
+{
+  "coverage": {
+    "ok": 0,
+    "attempted": 1,
+    "coverage": "0/1",
+    "missing_reason": {
+      "suppressed-small-sample": 1
+    }
+  }
+}
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+"Glens Falls, NY",15-1252,missing,suppressed-small-sample,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+# exit 0
+
+$ python3 scripts/bls/local-wage-adjustment.py --metro "Glens Falls, NY" --soc 15-1243 <rebuilt inputs> --json
+coverage = 0/1 (ok=0 attempted=1 missing_reason={'no-occupation-row': 1})
+{
+  "coverage": {
+    "ok": 0,
+    "attempted": 1,
+    "coverage": "0/1",
+    "missing_reason": {
+      "no-occupation-row": 1
+    }
+  }
+}
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+"Glens Falls, NY",15-1243,missing,no-occupation-row,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+# exit 0
+
+$ python3 scripts/bls/local-wage-adjustment.py --metro "New York-Newark-Jersey City, NY-NJ" --soc 15-1252 <rebuilt inputs> --json
+coverage = 1/1 (ok=1 attempted=1 missing_reason={})
+{
+  "coverage": {
+    "ok": 1,
+    "attempted": 1,
+    "coverage": "1/1",
+    "missing_reason": {}
+  }
+}
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+"New York-Newark-Jersey City, NY-NJ",15-1252,ok,,161090.00,161970.00,112.5630,112061.69,169078.65,143892.75,ok,133080.00,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+# exit 0

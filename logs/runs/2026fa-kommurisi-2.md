@@ -1,0 +1,37 @@
+# 2026fa-kommurisi-2 — data-role-salary-floor v0.1.0
+
+- **Date:** 2026-10-21
+- **Recipe:** recipes/cases/2026fa/kommurisi-data-role-salary-floor.md v0.1.0 (status DRAFT, 3 open TODOs)
+- **Mode:** sample
+- **Inputs:**
+  - `scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fixtures/worked-run/postings.json`: persona yes; 6 postings, 3 real public Greenhouse postings (Klaviyo 7737707003, CarGurus 8096751, Toast 8243192) and 3 CONSTRUCTED.
+  - `pay-ranges.json`, captured 2026-10-21T21:26Z.
+  - BLS `MSA_M2024_dl.xlsx` sha256 `2a172aed…d6ec` (from `oesm24ma.zip` `7bf915fc…35d9`); BEA `MARPP_MSA_2008_2024.csv` sha256 `4ce7a7e2…e9f4`. Both rebuilt into `.data/` (git-ignored).
+  - The 80 Days CSV and the O\*NET compact CSV, as shipped at upstream `015843d`.
+- **Commands:**
+  - `npm run bls:local-wage -- --metro "Boston-Cambridge-Newton, MA-NH" --soc 15-2051` (before and after the Windows patch)
+  - `.venv/Scripts/python.exe scripts/contrib/2026fa/kommurisi-data-role-salary-floor/build_local_wage_inputs.py --bls … --bea …`
+  - `python3 scripts/bls/local-wage-adjustment.py --metro "Glens Falls, NY" --soc 15-1252|15-1243 …` and `--metro "New York-Newark-Jersey City, NY-NJ" --soc 15-1252 …` (rebuilt inputs, `--json`)
+  - `python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/fetch_pay_ranges.py`
+  - `python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/salary_floor.py` (run twice)
+  - `python3 scripts/contrib/2026fa/kommurisi-data-role-salary-floor/audit_log.py`
+  - `.venv/Scripts/python.exe -m unittest …/test_salary_floor.py -v` · `…/mutation_test.py`
+- **Gates:**
+  - G1 SOC: 4 ok (choice given), 1 `ambiguous-soc` (CarGurus; floors 72,130–102,400, 42%), 1 not reached.
+  - G2 metro wage: 4 ok, 1 `no-metro-match` ("Boston, MA", CONSTRUCTED; no national fallback).
+  - G3 liveness: 3 live (200), 1 not-live (404, CONSTRUCTED id), 2 unchecked (typed ranges).
+  - G4 LCA prevailing wage: not-checked (TODO-1).
+  - No gate was cleared by a named human in this run.
+- **Result:** Range clears floor 2 (Klaviyo, Toast) · Range starts below floor 1 (CONSTRUCTED) · Skip 1 (CONSTRUCTED) · Unresolved 2 (CarGurus, CONSTRUCTED metro). Floor for 15-2051 in Boston = $102,400.
+- **Outputs:** `course/2026fa/submissions/kommurisi/data-role-salary-floor/runs/latest/salary-floor.{log.json,report.md}`; evidence 01–10 beside them.
+- **Verified vs inferred:**
+  - Records: BLS rows (file:line; 4 Boston rows re-read from the xlsx), 80 Days rows 14495 and 27011, Greenhouse captures.
+  - Script-output: the maintained gates and the RPP cross-check.
+  - Your-input: the SOC candidates and choices, the 25th-percentile rule, the 15% spread limit (drafted by Claude, awaiting Siddi's confirmation).
+  - Model-judgment: none.
+- **Open issues:**
+  - TODO-1: no OFLC prevailing wage, so the legal H-1B floor is unchecked.
+  - TODO-2: Greenhouse only.
+  - TODO-3: the maintained `data/bls/local-wage/` inputs (and `sample.csv`, `requirements.txt`) are absent from `main`.
+  - The maintained script was patched for Windows, but not run on POSIX after the patch.
+  - Real early-career Boston postings with ranges were scarce, so the real postings are mid or senior.
