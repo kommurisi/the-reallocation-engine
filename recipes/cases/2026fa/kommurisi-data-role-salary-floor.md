@@ -29,7 +29,7 @@ recipe_version: 0.1.0
 
 ## Lifecycle note (why DRAFT)
 
-A full sample run completed on real BLS, BEA, 80 Days and Greenhouse data, and conformance passes. That is the evidence SNICKERDOODLE asks for at SPECIFIED → RUNNABLE-SAMPLE. But the DRAFT → SPECIFIED gate is *zero open TODOs*, and this recipe carries three (see Proposed additions). The honest status is therefore **DRAFT**. No attestation is recorded: the worked run's attestation table is waiting for the author's signature, and an attestation belongs only at VERIFIED anyway.
+A full sample run completed on real BLS, BEA, 80 Days and Greenhouse data, and conformance passes. That is the evidence SNICKERDOODLE asks for at SPECIFIED → RUNNABLE-SAMPLE. But the DRAFT → SPECIFIED gate is *zero open TODOs*, and this recipe carries three (see Proposed additions). The honest status is therefore **DRAFT**. The worked run's sample-run attestation table was signed by the author on 2026-10-21. The frontmatter `attestation` stays `null`, because SNICKERDOODLE records it only at VERIFIED.
 
 ## Required reads
 

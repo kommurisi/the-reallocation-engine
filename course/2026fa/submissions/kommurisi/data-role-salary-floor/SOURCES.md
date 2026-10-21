@@ -63,4 +63,6 @@ This page lists every data source, tool and piece of code behind the salary-floo
 - Download the BLS file in the app browser, and BEA by script.
 - Patch the maintained script and declare it in the PR.
 - Ask the TA before any push or PR, given PR #31.
-- *[Siddi: add here anything you changed, rejected, or confirmed: the SOC choices, the floor rule, the postings.]*
+- Confirmed the SOC choices, the 25th-percentile floor rule and the 15% spread limit as Claude drafted them, and changed nothing (2026-10-21).
+- Read WORKED-RUN.md and signed its attestation (2026-10-21).
+- After the TA said grading is on Canvas, checked against GitHub: push the branch to the fork only, and open no PR while #31 is open.

@@ -21,13 +21,13 @@
   - G2 metro wage: 4 ok, 1 `no-metro-match` ("Boston, MA", CONSTRUCTED; no national fallback).
   - G3 liveness: 3 live (200), 1 not-live (404, CONSTRUCTED id), 2 unchecked (typed ranges).
   - G4 LCA prevailing wage: not-checked (TODO-1).
-  - No gate was cleared by a named human in this run.
+  - No gate decision was logged during the run. The G1 SOC choices were drafted by Claude and confirmed by Siddi after the run (2026-10-21), unchanged.
 - **Result:** Range clears floor 2 (Klaviyo, Toast) · Range starts below floor 1 (CONSTRUCTED) · Skip 1 (CONSTRUCTED) · Unresolved 2 (CarGurus, CONSTRUCTED metro). Floor for 15-2051 in Boston = $102,400.
 - **Outputs:** `course/2026fa/submissions/kommurisi/data-role-salary-floor/runs/latest/salary-floor.{log.json,report.md}`; evidence 01–10 beside them.
 - **Verified vs inferred:**
   - Records: BLS rows (file:line; 4 Boston rows re-read from the xlsx), 80 Days rows 14495 and 27011, Greenhouse captures.
   - Script-output: the maintained gates and the RPP cross-check.
-  - Your-input: the SOC candidates and choices, the 25th-percentile rule, the 15% spread limit (drafted by Claude, awaiting Siddi's confirmation).
+  - Your-input: the SOC candidates and choices, the 25th-percentile rule, the 15% spread limit (drafted by Claude, confirmed by Siddi 2026-10-21).
   - Model-judgment: none.
 - **Open issues:**
   - TODO-1: no OFLC prevailing wage, so the legal H-1B floor is unchecked.

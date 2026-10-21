@@ -27,11 +27,11 @@ This is the record of actually running the salary-floor mode, on 21 October 2026
 
 **Persona** (fictional, modelled on the author's situation; no name, contacts or real dates): an F-1 MS Information Systems (STEM) student in Boston, graduating Dec 2026, targeting early-career BI / analytics roles that will need H-1B sponsorship.
 
-**Floor rule** (your-input, *drafted by Claude, Siddi to confirm*):
+**Floor rule** (your-input, *drafted by Claude, confirmed by Siddi 2026-10-21*):
 - BLS metro **25th percentile** of the chosen occupation;
 - an SOC spread limit of **15%**, above which the mode refuses to pick an occupation by itself.
 
-| # | Posting | Real? | Source of range | SOC candidates | SOC choice (your-input, *drafted by Claude, Siddi to confirm*) |
+| # | Posting | Real? | Source of range | SOC candidates | SOC choice (your-input, *drafted by Claude, confirmed by Siddi 2026-10-21*) |
 |---|---|---|---|---|---|
 | 1 | Klaviyo — Analytics Engineer (Boston) | real | Greenhouse API | 15-1243, 15-2051 (added) | 15-2051: BI/analytics modelling; the lower floor |
 | 2 | CarGurus — Senior Product Data Analyst, Dealer (Boston) | real | Greenhouse API | 15-2051, 13-1161, 15-2041 (added) | none, to exercise the ambiguity gate |
@@ -140,8 +140,10 @@ coverage = 0/1 (ok=0 attempted=1 missing_reason={'suppressed-small-sample': 1})
     }
   }
 }
-metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
-"Glens Falls, NY",15-1252,missing,suppressed-small-sample,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+
+"Glens Falls, NY",15-1252,missing,suppressed-small-sample,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+
 # exit 0
 
 $ python3 scripts/bls/local-wage-adjustment.py --metro "Glens Falls, NY" --soc 15-1243 <rebuilt inputs> --json
@@ -156,8 +158,10 @@ coverage = 0/1 (ok=0 attempted=1 missing_reason={'no-occupation-row': 1})
     }
   }
 }
-metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
-"Glens Falls, NY",15-1243,missing,no-occupation-row,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+
+"Glens Falls, NY",15-1243,missing,no-occupation-row,,,,,,,,,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+
 # exit 0
 
 $ python3 scripts/bls/local-wage-adjustment.py --metro "New York-Newark-Jersey City, NY-NJ" --soc 15-1252 <rebuilt inputs> --json
@@ -170,8 +174,10 @@ coverage = 1/1 (ok=1 attempted=1 missing_reason={})
     "missing_reason": {}
   }
 }
-metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
-"New York-Newark-Jersey City, NY-NJ",15-1252,ok,,161090.00,161970.00,112.5630,112061.69,169078.65,143892.75,ok,133080.00,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+metro_area,soc_code,status,missing_reason,nominal_wage_mean,nominal_wage_median,bea_rpp_value,adjusted_wage_band_low,adjusted_wage_band_high,adjusted_wage_median,plausibility_flag,national_median_wage,source_bls_file,source_bea_file,run_date
+
+"New York-Newark-Jersey City, NY-NJ",15-1252,ok,,161090.00,161970.00,112.5630,112061.69,169078.65,143892.75,ok,133080.00,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\metro_oews.csv,scripts\contrib\2026fa\kommurisi-data-role-salary-floor\.data\bea_rpp.csv,2026-10-21
+
 # exit 0
 ```
 
@@ -228,8 +234,8 @@ The report's summary table, pasted from `runs/latest/salary-floor.report.md`:
 | Klaviyo $126,000 (154 approvals), Toast $177,341 (150) H-1B medians | **record**: 80 Days CSV lines 14495, 27011 (company-wide) | that they are *not* a benchmark is the mode's rule |
 | CarGurus is not in the 80 Days CSV | **record**: exact-name search | — |
 | Posted ranges $140k–$210k, $120k–$151k, $145k–$232k; job 1000000001 → 404 | **record**: Greenhouse API, captured 2026-10-21T21:26Z | — |
-| SOC choice per posting | — | **your-input** (drafted by Claude, Siddi to confirm) |
-| Floor = the 25th percentile; spread limit 15% | — | **your-input** (drafted by Claude, Siddi to confirm) |
+| SOC choice per posting | — | **your-input** (drafted by Claude, confirmed by Siddi 2026-10-21) |
+| Floor = the 25th percentile; spread limit 15% | — | **your-input** (drafted by Claude, confirmed by Siddi 2026-10-21) |
 | "Range clears / starts below floor" | **script-output**: arithmetic on the two records above | — |
 | Anything from a language model | none: no model was called by the mode | — |
 
@@ -328,7 +334,7 @@ BROKEN-liveness-ignored: KILLED by 1 test(s): test_dead_posting_is_skipped_witho
 ## Attestation
 
 - Recipe: data-role-salary-floor v0.1.0
-- By: ______________________ (Siddi Kommuri, to sign after reading this page) · 2026-10-__
+- By: Siddi Kommuri · 2026-10-21 (signed after reading this page)
 - Runs: every command below was executed by Claude Code in Siddi's session on 2026-10-21. The signature attests that Siddi reviewed these results, not that Siddi typed the commands.
 
 ### Tested
@@ -382,5 +388,5 @@ BROKEN-liveness-ignored: KILLED by 1 test(s): test_dead_posting_is_skipped_witho
 **Next steps.**
 1. Close TODO-1 with the OFLC wage library, so G4 can say whether an offer would clear the legal Level I wage for the filed code.
 2. Add Lever/Ashby ranges (TODO-2) and re-run on early-career postings.
-3. Have Siddi re-decide the SOC choices from the actual job duties, and record the reasons.
+3. Re-decide the SOC choices from each posting's actual duties, and record the reasons. Siddi accepted the drafted choices for this sample run (2026-10-21).
 4. Ask the maintainers whether to restore `data/bls/local-wage/` or adopt the builder (TODO-3).

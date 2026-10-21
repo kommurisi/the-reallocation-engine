@@ -17,4 +17,6 @@ This folder is Siddi Kommuri's submission for the Reallocation Engine *Mode Buil
 
 **Paths:** the assignment text is the summer-2026 version (`recipes/`, `assignments/submissions/`, branch `mode/<name>-<domain>`). The fall `CONTRIBUTING.md`, enforced by CI, requires these namespaced paths, so they were used. `logs/RUN_LOG.md` is never edited by contributors; the entry lives in `logs/runs/`, in the same format.
 
-**Status:** DRAFT, 3 open TODOs, `attestation: null`. The attestation in WORKED-RUN is waiting for Siddi's signature.
+**Status:** DRAFT, 3 open TODOs, `attestation: null`. The sample-run attestation in WORKED-RUN was signed by Siddi on 2026-10-21. The frontmatter `attestation` stays `null`, because SNICKERDOODLE sets it only at VERIFIED.
+
+**GitHub:** the same commit is on Siddi's fork, branch `contrib/2026fa-kommurisi-data-role-salary-floor` (github.com/kommurisi/the-reallocation-engine). No pull request was opened: PR #31 (the Oct 3 Recipe Design work) is still open, and the repo allows one open PR per student. The TA said grading is on Canvas, checked against GitHub.
