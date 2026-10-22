@@ -31,13 +31,9 @@ This is the honest log of building the salary-floor mode. Part A records what ha
 
 ## Part B: my entries (Siddi, in my own words)
 
-> Prompts from the course's Frictional guide. Answer the ones that fit; short bullets are fine. Do not invent difficulty.
+**2026-10-21 · the salary-floor mode**
 
-**2026-10-__ · what I was working on:**
-
-- I tried / expected:
-- What happened:
-- What I did / decided:
-- What Claude contributed, and what I accepted, changed or rejected (e.g. the SOC choices, the 25th-percentile rule):
-- What I understand now / still do not understand:
-- Next step:
+- **I tried / expected:** I set out to add a salary-floor mode for data and BI job postings in Boston: given a posting, say the lowest pay worth accepting, using official BLS wage data. I expected the repo's existing wage script and data to work as they were.
+- **What happened:** The repo's wage script couldn't run on Windows, and its data files were missing. After a one-file patch and rebuilding the data from the official downloads, the script reproduced its own documented examples. The worked run on 3 real Boston postings and 3 test cases gave a $102,400 floor. Klaviyo and Toast cleared it. CarGurus stayed Unresolved because its possible occupation codes give floors 42% apart. Toast's H-1B median was flagged as a misleading benchmark.
+- **What I did / decided:** I approved the Windows patch. I chose to push to my fork only and not open a PR, since #31 is still open and the TA said grading is on Canvas. I signed the attestation in WORKED-RUN.md on 2026-10-21.
+- **What Claude contributed, and what I accepted, changed or rejected:** Claude wrote the code and tests, ran every command, rebuilt the data and drafted the occupation-code choice for each posting and the floor rule (25th percentile, 15% spread). I accepted the occupation codes and the floor rule as drafted. I checked each choice against the posting before accepting.
